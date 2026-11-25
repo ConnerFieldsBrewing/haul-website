@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conner Fields Brewing · Coming 2027</title>
+<meta name="description" content="Conner Fields Brewing: a farmhouse brewery, tasting room and outdoor dining being built by hand in the Applegate Valley, opening 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a builder's progress report, warm and plain
+   IDEA: the brewery under construction, told like a job-site board
+   PICTURE: the building itself, wide, with a progress bar
+   COLOUR and TYPE: dry-grass gold ground, charcoal ink, ember accent; Big Shoulders Display + Inter
+   LAYOUT: nav, hero photo, what it will be, the build, back to town */
+:root{color-scheme:light;--gold:#c9a85e;--sand:#e3cf9f;--ink:#191816;--body:#2e271e;--brown:#5a3a12;--ember:#b4561f;--bone:#efe9df}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--gold);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--ink)}
+.d{font-family:'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;line-height:.9;letter-spacing:.01em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
+.rule{display:grid;gap:6px}.rule i{display:block;height:5px;background:var(--ink)}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:4px;font-weight:700;text-decoration:none;background:var(--ink);color:var(--bone)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+header{background:var(--ink);color:var(--bone)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.nav a{color:var(--bone);text-decoration:none;padding:10px 6px;font-weight:600}
+.nav .brand{display:flex;align-items:center;gap:10px;font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.04em}
+.nav .brand img{height:34px;width:auto}
+.hero{padding:clamp(36px,6vw,72px) 0 clamp(40px,6vw,72px)}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,64px);align-items:center}
+.kick{margin:0 0 10px;font-weight:700;color:var(--brown)}
+h1{margin:0;font-size:clamp(56px,8vw,112px);text-wrap:balance}
+.lead{margin:18px 0 0;font-size:18px;color:var(--body);max-width:560px}
+.soon{display:inline-block;margin-top:20px;padding:8px 14px;background:var(--ink);color:var(--bone);font-weight:700;border-radius:3px}
+.hero img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block;box-shadow:0 18px 40px rgba(25,24,22,.3)}
+.band{padding:clamp(48px,7vw,88px) 0}
+.sand{background:var(--sand)}
+h2{margin:0;font-size:clamp(42px,6vw,68px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;margin-top:30px}
+.card{background:rgba(255,255,255,.35);border-radius:6px;padding:24px}
+.card h3{margin:0 0 8px;font-size:30px}
+.card p{margin:0;color:var(--body)}
+.stats{display:flex;flex-wrap:wrap;gap:28px 56px;margin-top:30px}
+.stats div b{display:block;font-family:'Big Shoulders Display',Impact,sans-serif;font-size:54px;line-height:1}
+.stats div span{color:var(--body);font-size:15px}
+.bar{margin-top:30px;max-width:720px}
+.bar .lbl{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px}
+.bar .track{height:16px;border-radius:8px;background:rgba(25,24,22,.18);overflow:hidden}
+.bar .fill{height:100%;width:85%;background:var(--ember)}
+.town{background:var(--ink);color:var(--bone)}
+.town a.btn{background:var(--bone);color:var(--ink)}
+.town p{color:#cfc7bb;max-width:620px}
+footer{background:var(--ink);color:#b3aa9d;font-size:14px;padding:0 0 36px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid #3a3631;padding-top:24px}
+footer a{color:#cfc7bb}
+.ph{position:relative;display:block;overflow:hidden}.ph img{display:block}.banner{position:absolute;top:clamp(22px,3vw,34px);right:clamp(-74px,-6vw,-58px);width:clamp(230px,24vw,300px);transform:rotate(40deg);background:#e2742a;color:#191816;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1;font-size:clamp(16px,1.7vw,22px);text-align:center;padding:.55em 0;border-top:2px solid #191816;border-bottom:2px solid #191816;box-shadow:0 6px 16px rgba(0,0,0,.35);pointer-events:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Back to Town &amp; Country home"><img src="cfb-badge-light.png" alt="">Conner Fields</a>
+    <a href="haul.html">The Haul →</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hgrid">
+      <div>
+        <p class="kick">Country · Applegate Valley</p>
+        <h1 class="d">Farmhouse Brewery</h1>
+        <div class="rule" aria-hidden="true" style="margin-top:20px;max-width:440px"><i></i><i></i></div>
+        <p class="lead">We're building Conner Fields Brewing the way we make everything at The Haul: by hand, from scratch. Off Kubli Road in the Applegate Valley, the heart of Southern Oregon's wine region, a production brewery and tasting room is taking shape, with outdoor dining in a peaceful country setting.</p>
+        <span class="soon">Opening 2027</span>
+      </div>
+      <div class="ph"><img src="brewery.jpg" alt="The Conner Fields brewery building with its covered patio, lawn and fall trees, under a Coming Soon banner"><span class="banner" aria-hidden="true">Coming soon</span></div>
+    </div>
+  </section>
+
+  <section class="band sand" aria-labelledby="whatTitle">
+    <div class="wrap">
+      <p class="kick">What's coming</p>
+      <h2 class="d" id="whatTitle">Out in the country</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:28px;align-items:start;margin-top:30px">
+      <img src="img/growler.jpg" alt="A Conner Fields Brewing half-gallon growler resting on driftwood at the coast" loading="lazy" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block;box-shadow:0 18px 40px rgba(25,24,22,.25)">
+      <div class="cards" style="margin-top:0;grid-template-columns:1fr">
+        <div class="card"><h3 class="d">The brewery</h3><p>Handcrafted ales and lagers brewed on site, then poured here and downtown at The Haul.</p></div>
+        <div class="card"><h3 class="d">Tasting room</h3><p>Pints at the source, with food from the same kitchen family that runs The Haul.</p></div>
+        <div class="card"><h3 class="d">Outdoor dining</h3><p>Grab a seat on the deck or spread out on the lawn under the trees. Bring the kids, bring a blanket, and stay a while.</p></div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="buildTitle">
+    <div class="wrap">
+      <p class="kick">The build</p>
+      <h2 class="d" id="buildTitle">Built by the brewer</h2>
+      <p class="lead">Designed, fabricated and largely built by hand. Here's where it stands.</p>
+      <div class="bar">
+        <div class="lbl"><span>Construction</span><span>85% complete</span></div>
+        <div class="track" role="progressbar" aria-label="Construction progress" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+      </div>
+      <div class="stats">
+        <div><b>3,800</b><span>sq ft building</span></div>
+        <div><b>2027</b><span>opening</span></div>
+      </div>
+      <p style="margin-top:30px"><a class="btn" href="https://www.instagram.com/thehaulgp/">Follow the build on Instagram</a></p>
+    </div>
+  </section>
+
+  <section class="band town" aria-labelledby="townTitle">
+    <div class="wrap">
+      <h2 class="d" id="townTitle">Thirsty now? Come into town</h2>
+      <p style="margin:16px 0 24px">Until the brewery opens, find us downtown at The Haul: scratch kitchen, taproom and full bar on H Street.</p>
+      <a class="btn" href="haul.html">Go to The Haul →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html">Home</a><a href="haul.html">The Haul</a><a href="https://www.instagram.com/thehaulgp/">Instagram</a>
+    <span>Conner Fields Brewing · Applegate Valley, Josephine County, Oregon</span>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Haul &amp; Conner Fields Brewing</title>
+<meta name="description" content="The Haul, a scratch kitchen and taproom in downtown Grants Pass, and Conner Fields Brewing, a farmhouse brewery coming to the Applegate Valley in 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: plain, proud, one family in two places
+   IDEA: a front door with two doors, town and country
+   PICTURE: the H Street sign and the brewery building, side by side, wide
+   COLOUR and TYPE: charcoal and bone for town, dry-grass gold for country; Big Shoulders Display + Inter
+   LAYOUT: full-width wordmark, two big link cards, the line, a slim footer */
+:root{color-scheme:dark;--bg:#191816;--panel:#24221f;--ink:#efe9df;--soft:#cfc7bb;--mute:#b3aa9d;--ember:#e2742a;--gold:#c9a85e}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip}
+.d{font-family:'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;line-height:.88;letter-spacing:.01em}
+.rule{display:grid;gap:6px;width:100%}.rule i{display:block;height:5px;background:var(--ink)}
+header{padding:clamp(24px,4vw,40px) max(4vw,16px) 22px;display:flex;flex-direction:column;align-items:center;gap:16px}
+h1{margin:0;width:100%;display:flex;align-items:center;justify-content:center;gap:.18em;white-space:nowrap;font-size:min(7.6vw,112px)}
+h1 img{height:.86em;width:auto;display:block}
+.sub{margin:0;font-size:clamp(15px,1.8vw,22px);letter-spacing:.2em;color:#b39a80;text-align:center}
+.sub b{color:var(--ember);font-weight:800}
+main{padding:8px max(4vw,16px) 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;max-width:1440px;margin:0 auto}
+.door{display:flex;flex-direction:column;border-radius:6px;overflow:hidden;text-decoration:none;transition:transform .25s ease, box-shadow .25s ease}
+.door:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:reduce){.door{transition:none}.door:hover{transform:none}}
+.door:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.door img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.door .body{padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:10px;flex-grow:1}
+.door .where{font-family:'Big Shoulders Display',Impact,sans-serif;font-weight:800;font-size:20px;letter-spacing:.2em;text-transform:uppercase}
+.door .name{font-size:clamp(56px,6.4vw,96px);}
+.door p{margin:0;font-size:17px}
+.door .go{margin-top:auto;padding-top:14px}
+.door .go span{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:4px;font-weight:700}
+.town{background:var(--panel);color:var(--ink)}.town .where{color:var(--ember)}.town p{color:var(--soft)}.town .go span{background:var(--ink);color:#191816}
+.country{background:var(--gold);color:#191816}.country .where{color:#5a3a12}.country p{color:#2e271e}.country .go span{background:#191816;color:#f1ece3}
+.tag{padding:10px max(4vw,16px) 6px;display:flex;flex-direction:column;align-items:center;gap:18px;max-width:1440px;margin:0 auto}
+.tag p{margin:0;text-align:center;font-size:clamp(38px,5.6vw,72px)}
+.tag p span{color:var(--ember)}
+footer{padding:26px max(4vw,16px) 36px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;font-size:14px;color:var(--mute)}
+footer a{color:var(--soft);padding:6px 0}
+@media(max-width:600px){h1{flex-direction:column;white-space:normal;font-size:16vw;text-align:center;gap:10px}h1 img{height:70px}.sub{letter-spacing:.12em}}
+.ph{position:relative;display:block;overflow:hidden}.ph img{display:block}.banner{position:absolute;top:clamp(22px,3vw,34px);right:clamp(-74px,-6vw,-58px);width:clamp(230px,24vw,300px);transform:rotate(40deg);background:#e2742a;color:#191816;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1;font-size:clamp(16px,1.7vw,22px);text-align:center;padding:.55em 0;border-top:2px solid #191816;border-bottom:2px solid #191816;box-shadow:0 6px 16px rgba(0,0,0,.35);pointer-events:none}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="d"><span>Conner Fields Brewing</span><img src="cfb-badge-light.png" alt="CFB badge"></h1>
+  <div class="rule" aria-hidden="true"><i></i><i></i></div>
+  <p class="sub d">Town &amp; Country · <b>Southern Oregon</b></p>
+</header>
+
+<main>
+  <a class="door town" href="haul.html" aria-label="The Haul, downtown Grants Pass. Go to The Haul">
+    <img src="haul-sign.jpg" alt="The Haul's painted wall sign on H Street, framed by fall leaves">
+    <div class="body">
+      <span class="where">Town · Downtown Grants Pass</span>
+      <span class="name d">The Haul</span>
+      <p>Scratch kitchen &amp; taproom on H Street. Menu, hours, ordering and events.</p>
+      <div class="go"><span>Come into town →</span></div>
+    </div>
+  </a>
+  <a class="door country" href="brewery.html" aria-label="Farmhouse Brewery, Applegate Valley, opening 2027. Go to the brewery">
+    <div class="ph"><img src="brewery.jpg" alt="The Conner Fields brewery building with its covered patio and fall trees, under a Coming Soon banner"><span class="banner" aria-hidden="true">Coming soon</span></div>
+    <div class="body">
+      <span class="where">Country · Applegate Valley</span>
+      <span class="name d">Farmhouse Brewery</span>
+      <p>Conner Fields Brewing: brewery, tasting room &amp; outdoor dining, opening 2027.</p>
+      <div class="go"><span>Head out to the country →</span></div>
+    </div>
+  </a>
+</main>
+
+<footer>
+  <a href="haul.html#menu">Menu</a><a href="haul.html#visit">Hours</a><a href="haul.html#events">Events</a>
+  <a href="https://www.instagram.com/thehaulgp/">Instagram</a><a href="http://www.facebook.com/thehaulgp">Facebook</a>
+  <span>121 SW H Street, Grants Pass · (541) 474-4991 · 21+ for beer</span>
+</footer>
+</body>
+</html>

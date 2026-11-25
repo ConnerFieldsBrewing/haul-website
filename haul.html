@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Haul · Downtown Grants Pass</title>
+<meta name="description" content="The Haul: scratch kitchen and taproom in downtown Grants Pass, Oregon. Pizza, sandwiches, tacos, salads and craft drinks. Conner Fields Brewing coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a downtown scratch kitchen and taproom, warm, plain-spoken, built by hand
+   IDEA: the painted wall sign on H Street, charcoal and bone with a double rule
+   PICTURE: the real sign photo full-bleed, the brewery building for "coming soon"
+   COLOUR and TYPE: charcoal ground, bone ink, ember orange accent; Big Shoulders Display + Inter
+   LAYOUT: one long page, nav to footer: hero, today's hours, menu, visit, events, brewery */
+:root{color-scheme:dark;--bg:#191816;--panel:#23211e;--line:#3a3631;--ink:#efe9df;--soft:#cfc7bb;--mute:#b3aa9d;--ember:#e2742a;--gold:#c9a85e}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+a{color:var(--ink)}
+.d{font-family:'Big Shoulders Display',Impact,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,16px)}
+.rule{display:grid;gap:6px}.rule i{display:block;height:5px;background:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-radius:4px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid transparent}
+.btn.ember{background:var(--ember);color:#191816}.btn.bone{background:var(--ink);color:#191816}.btn.ghost{border-color:#6a645b;color:var(--ink)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(25,24,22,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:40px;width:auto}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:2px}
+.links a{padding:10px 12px;text-decoration:none;font-weight:500;font-size:15px;color:var(--soft)}
+.links a:hover{color:var(--ink)}
+.links .btn{margin-left:6px;min-height:44px;padding:10px 16px;font-size:15px;color:#191816}
+
+/* hero */
+.hero-photo{position:relative;height:clamp(260px,58vh,640px);overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
+.hero-photo::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(180deg,rgba(25,24,22,0),var(--bg))}
+.hero-copy{padding:clamp(8px,2vw,24px) 0 clamp(48px,7vw,88px)}
+.hero-copy .wrap{max-width:1240px}
+.hero-copy .logo{height:clamp(120px,16vw,200px);width:auto}
+.hero h1{margin:0;font-size:clamp(42px,6vw,76px);text-wrap:balance;max-width:900px}
+.hero p.lead{margin:16px 0 0;font-size:clamp(17px,1.8vw,19px);color:var(--soft);max-width:620px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.today{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:var(--soft);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:5px 11px;border-radius:3px;font-weight:700;font-size:14px;color:#e6f2e8;background:#2f5a3a}
+.pill.closed{background:#5a2f2f;color:#f6e6e6}
+
+/* bands */
+.band{padding:clamp(56px,8vw,104px) 0}
+.kick{margin:0 0 10px;font-weight:700;font-size:15px;color:var(--ember)}
+h2.d{margin:0;font-size:clamp(44px,7vw,80px);text-wrap:balance}
+.intro{max-width:640px;color:var(--soft);font-size:17px;margin:16px 0 0}
+
+/* menu */
+.menu-nav{display:flex;gap:8px;overflow-x:auto;padding:22px 0 6px;scrollbar-width:thin}
+.menu-nav a{flex:none;padding:10px 16px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;color:var(--soft)}
+.menu-nav a:hover{border-color:var(--ink);color:var(--ink)}
+.menu-cat{margin-top:44px}
+.cat-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.cat-head h3{margin:0;font-size:clamp(34px,4.5vw,48px)}
+.cat-head span{color:var(--mute);font-size:15px}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));column-gap:48px}
+.item{padding:16px 0;border-bottom:1px solid var(--line)}
+.item .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.item b{font-weight:700;font-size:17px}
+.item .price{font-weight:700;white-space:nowrap;color:var(--gold)}
+.item p{margin:4px 0 0;color:var(--mute);font-size:15px;line-height:1.5}
+.cat-intro{margin:14px 0 4px;color:var(--soft);font-size:15px;max-width:760px}.tag{font-style:normal;font-size:12px;font-weight:600;color:var(--gold);border:1px solid #5c5244;border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.strip figure{margin:0;position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;background:var(--panel)}
+.strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.strip figure:hover img{transform:scale(1.04)}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(180deg,rgba(25,24,22,0),rgba(25,24,22,.85));font-weight:600;font-size:15px}
+@media(max-width:800px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.strip img{transition:none}.strip figure:hover img{transform:none}}
+.cat-fig{margin:18px 0 6px;border-radius:6px;overflow:hidden;aspect-ratio:21/8;background:var(--panel)}
+.cat-fig img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:600px){.cat-fig{aspect-ratio:16/9}}
+.photo-panel{border-radius:6px;overflow:hidden;aspect-ratio:4/5;max-height:620px;width:100%}
+.photo-panel img{width:100%;height:100%;object-fit:cover;display:block}
+.fleet{background:var(--panel);border-block:1px solid var(--line)}
+.fgrid{margin-top:30px}
+.fgrid img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 80%;border-radius:6px;display:block}
+@media(max-width:600px){.fgrid img{aspect-ratio:4/3}}
+.names{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.names span{padding:8px 14px;border:1px solid #5c5244;border-radius:999px;font-weight:600;font-size:15px}
+.menu-note{margin-top:28px;color:var(--mute);font-size:14px}
+
+.watch{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:center}
+@media(max-width:860px){.watch{grid-template-columns:minmax(0,1fr)}}
+.vid{position:relative;display:block;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.vid:hover img{transform:scale(1.03)}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,24,22,0) 55%,rgba(25,24,22,.75))}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:#e2742a;color:#191816;display:grid;place-items:center;z-index:1;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:transform .2s}
+.vid:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+.vcap{position:absolute;left:16px;bottom:14px;z-index:1;font-weight:600;font-size:15px}
+.vid:focus-visible{outline:3px solid #e2742a;outline-offset:3px}
+.ig{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;margin-top:40px;padding:22px clamp(20px,3vw,32px);background:var(--panel);border:1px solid var(--line);border-radius:6px}
+.ig h3{margin:0 0 4px;font-size:30px}.ig p{margin:0;color:var(--soft)}
+@media (prefers-reduced-motion:reduce){.vid img,.play{transition:none}}
+
+/* visit */
+.visit{background:var(--panel);border-block:1px solid var(--line)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;margin-top:34px}
+.vgrid h3{margin:0 0 12px;font-size:30px}
+table.hours{width:100%;border-collapse:collapse;font-size:16px}
+table.hours td{padding:9px 0;border-bottom:1px solid var(--line)}
+table.hours td:last-child{text-align:right;white-space:nowrap}
+table.hours tr.now td{color:var(--ember);font-weight:700}
+.vgrid p{margin:0 0 10px;color:var(--soft)}
+
+/* events */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:center}
+.events ul{margin:18px 0 0;padding-left:20px;color:var(--soft);line-height:1.9}
+
+/* brewery */
+.brew{background:var(--gold);color:#191816}
+.brew a{color:#191816}
+.brew .kick{color:#5a3a12}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,5vw,64px);align-items:center}
+.bgrid img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;display:block;box-shadow:0 18px 40px rgba(25,24,22,.28)}
+.soon{display:inline-block;margin-top:18px;padding:7px 12px;background:#191816;color:var(--ink);font-weight:700;border-radius:3px}
+.brew p.body{margin:16px 0 0;font-size:17px;color:#2e271e;max-width:560px}
+.brew .rule i{background:#191816}
+
+footer{padding:40px 0 48px;color:var(--mute);font-size:14px}
+.foot{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.foot a{color:var(--soft);padding:8px 0}
+@media(max-width:600px){.links .opt{display:none}.links a:not(.btn){padding:10px 8px}.brand img{height:34px}.nav{flex-wrap:nowrap}.hero-photo{height:240px}.hero-photo img{object-position:38% 62%}}
+.ph{position:relative;display:block;overflow:hidden}.ph img{display:block}.banner{position:absolute;top:clamp(22px,3vw,34px);right:clamp(-74px,-6vw,-58px);width:clamp(230px,24vw,300px);transform:rotate(40deg);background:#e2742a;color:#191816;font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.12em;line-height:1;font-size:clamp(16px,1.7vw,22px);text-align:center;padding:.55em 0;border-top:2px solid #191816;border-bottom:2px solid #191816;box-shadow:0 6px 16px rgba(0,0,0,.35);pointer-events:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Back to Town &amp; Country home"><img src="haul-logo.png" alt="The Haul"></a>
+    <nav class="links" aria-label="Main">
+      <a class="opt" href="index.html">Home</a>
+      <a href="#menu">Menu</a>
+      <a class="opt" href="#visit">Hours</a>
+      <a class="opt" href="#events">Events</a>
+      <a class="opt" href="#fleet">On the road</a>
+      <a class="opt" href="brewery.html">Brewery</a>
+      <a class="btn ember order-link" href="#visit">Order online</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="The Haul">
+    <div class="hero-photo"><img src="haul-sign.jpg" alt="The Haul's painted wall sign on H Street, framed by red and orange fall leaves"></div>
+    <div class="hero-copy">
+      <div class="wrap">
+        <div>
+          <h1 class="d">Scratch kitchen &amp; taproom in downtown Grants Pass</h1>
+          <p class="lead">Everything here is made by hand, from scratch: pizza fired over madrone, meats smoked in house, tortillas from corn we nixtamalize ourselves. It's a wide-ranging menu with something for everyone, including vegan, gluten-free and kids' options. But the food is only half of it. The Haul is where downtown gathers for live music, long tables and good company.</p>
+          <div class="cta">
+            <a class="btn ember order-link" href="#visit">Order online</a>
+            <a class="btn ghost" href="#menu">See the menu</a>
+          </div>
+          <div class="today">
+            <span id="todayPill" class="pill">Open today</span>
+            <span>121 SW H Street</span>
+            <span>(541) 474-4991</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="makeTitle" style="padding-bottom:0">
+    <div class="wrap">
+      <p class="kick">From our kitchen and bar</p>
+      <h2 class="d" id="makeTitle">Made here, by hand</h2>
+      <div class="strip">
+        <figure><img src="img/oven.jpg" alt="Pizza coming out of the wood-fired Acunto oven from Naples" loading="lazy"><figcaption>Madrone-fired in our Naples oven</figcaption></figure>
+        <figure><img src="img/taco-trio.jpg" alt="A spread of tacos on house-made corn tortillas" loading="lazy"><figcaption>Tortillas made in house</figcaption></figure>
+        <figure><img src="img/beer-bar.jpg" alt="A tulip glass of golden beer on the bar" loading="lazy"><figcaption>Cold beer &amp; a full bar</figcaption></figure>
+        <figure><img src="img/taproom.jpg" alt="A fresh pour on the bar with the taproom crowd behind" loading="lazy" style="object-position:72% 50%"><figcaption>Downtown taproom</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="menu" aria-labelledby="menuTitle">
+    <div class="wrap">
+      <p class="kick">The menu</p>
+      <h2 class="d" id="menuTitle">Made from scratch</h2>
+      <p class="intro">Our everyday menu. Items rotate with the seasons, so ask your server what's new.</p>
+      <p style="margin-top:20px"><a class="btn ember order-link" href="tel:+15414744991">Call to order</a> <span class="order-sub" style="color:var(--soft);font-size:15px;margin-left:10px">(541) 474-4991 · pickup at 121 SW H Street</span></p>
+      <nav class="menu-nav" aria-label="Menu sections" id="menuNav"></nav>
+      <div id="menuBody"></div>
+      <p style="margin-top:28px"><a class="btn ember order-link" href="tel:+15414744991">Call to order</a></p>
+      <p class="menu-note">Prices and items may change. Our fryers use rice bran oil. Tell us about allergies or dietary needs and we'll do our best to accommodate.</p>
+    </div>
+  </section>
+
+  <section class="band visit" id="visit" aria-labelledby="visitTitle">
+    <div class="wrap">
+      <p class="kick">Hours &amp; location</p>
+      <h2 class="d" id="visitTitle">Come on in</h2>
+      <div class="vgrid">
+        <div>
+          <h3 class="d">Hours</h3>
+          <table class="hours" id="hoursTable"><tbody></tbody></table>
+          <p style="margin-top:12px;font-size:14px;color:var(--mute)">Online orders close 30 minutes before we do. Closed Thanksgiving and Christmas.</p>
+        </div>
+        <div>
+          <h3 class="d">Find us</h3>
+          <p>121 SW H Street<br>Grants Pass, OR 97526</p>
+          <p>Phone: <a href="tel:+15414744991">(541) 474-4991</a></p>
+          <p style="margin-top:18px"><a class="btn bone" href="https://www.google.com/maps/search/?api=1&query=The+Haul+121+SW+H+St+Grants+Pass+OR">Get directions</a></p>
+        </div>
+        <div>
+          <h3 class="d">Order</h3>
+          <p>Pickup orders are moving to our new online ordering. Until it's live, call us and we'll have it ready.</p>
+          <p style="margin-top:18px"><a class="btn ember order-link" href="tel:+15414744991">Call to order</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="events" aria-labelledby="eventsTitle">
+    <div class="wrap events">
+      <div>
+        <p class="kick">Events &amp; private parties</p>
+        <h2 class="d" id="eventsTitle">Bring your people</h2>
+        <p class="intro">Birthdays, rehearsal dinners, team parties and fundraisers, with our kitchen and our bar. Our upstairs space hosts private events.</p>
+        <ul>
+          <li>Upstairs room for private events</li>
+          <li>Food and bar packages from our kitchen</li>
+          <li>We'll send rates and menus the same day you ask</li>
+        </ul>
+        <p style="margin-top:24px"><a class="btn ember" href="https://docs.google.com/forms/d/1l-746UYtTV1D53PLbAyqPzws2BDQBx_UAVV4qVR_P50/viewform">Ask about a date</a></p>
+        <p style="margin-top:10px;color:var(--mute);font-size:14px">Fill out our quick event request and we'll get back to you, or call (541) 474-4991.</p>
+      </div>
+      <div class="photo-panel"><img src="img/upstairs.jpg" alt="The upstairs event room set for a holiday dinner, long tables under string lights and brick walls" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="band fleet" id="fleet" aria-labelledby="fleetTitle">
+    <div class="wrap">
+      <p class="kick">On the road</p>
+      <h2 class="d" id="fleetTitle">We bring the Haul to you</h2>
+      <p class="intro">Our mobile kitchens and taps pop up at markets, festivals, weddings and private parties around Southern Oregon.</p>
+      <div class="names"><span>Pizza Haul</span><span>BBQ Haul</span><span>Beer Haul</span><span>Haul Dogs</span></div>
+      <div class="fgrid">
+        <img src="img/beer-truck.jpg" alt="The vintage white Conner Fields beer truck parked in front of an old barn" loading="lazy">
+      </div>
+      <p style="margin-top:24px"><a class="btn ember" href="mailto:haulevents@gmail.com?subject=Booking%20a%20Haul%20for%20my%20event&amp;body=Which%20Haul%20(Pizza%2C%20BBQ%2C%20Beer%20or%20Haul%20Dogs)%3A%0ADate%3A%0ALocation%3A%0AHow%20many%20guests%3A%0A">Book a Haul for your event</a> <span style="color:var(--soft);font-size:15px;margin-left:10px">or email <a href="mailto:haulevents@gmail.com" style="color:inherit">haulevents@gmail.com</a></span></p>
+    </div>
+  </section>
+
+  <section class="band" id="watch" aria-labelledby="watchTitle" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="watch">
+        <div>
+          <p class="kick">As seen on Savor Grants Pass</p>
+          <h2 class="d" id="watchTitle">Watch the story</h2>
+          <p class="intro">Visit Grants Pass came into our kitchen for their Savor Grants Pass series: the fire, the craft and the people behind The Haul.</p>
+          <p style="margin-top:24px"><a class="btn bone" id="videoLink" href="https://www.youtube.com/watch?v=5K9UV6LS_1s">Watch the video</a></p>
+        </div>
+        <a class="vid" href="https://www.youtube.com/watch?v=5K9UV6LS_1s" aria-label="Play the Savor Grants Pass video about The Haul on YouTube">
+          <img src="https://i.ytimg.com/vi/5K9UV6LS_1s/maxresdefault.jpg" onerror="this.onerror=null;this.src='img/taproom.jpg'" alt="Still from the Savor Grants Pass video about The Haul" loading="lazy">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="34" height="34"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <span class="vcap">Savor Grants Pass · The Haul</span>
+        </a>
+      </div>
+      <div class="ig">
+        <div><h3 class="d">Follow along</h3><p>Specials, events, live music and the brewery build, posted as it happens.</p></div>
+        <a class="btn ember" href="https://www.instagram.com/thehaulgp/">@thehaulgp on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band brew" id="brewery" aria-labelledby="brewTitle">
+    <div class="wrap bgrid">
+      <div>
+        <p class="kick">Coming soon</p>
+        <h2 class="d" id="brewTitle">Conner Fields Brewing</h2>
+        <div class="rule" aria-hidden="true" style="margin-top:18px;max-width:420px"><i></i><i></i></div>
+        <p class="body">Our brewery is being built by hand in the Applegate Valley, the heart of Southern Oregon's renowned wine region: a production brewery and tasting room with outdoor dining in a peaceful country setting. Handcrafted ales and lagers from the same family as The Haul.</p>
+        <span class="soon">Opening 2027</span>
+        <p class="body" style="font-size:15px"><a href="brewery.html">More about the brewery →</a></p>
+      </div>
+      <div class="ph"><img src="brewery.jpg" alt="The Conner Fields brewery building with its covered patio, lawn and fall trees, under a Coming Soon banner"><span class="banner" aria-hidden="true">Coming soon</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <img src="haul-logo.png" alt="The Haul" style="height:46px;width:auto">
+    <nav aria-label="Footer">
+      <a href="#menu">Menu</a><a href="#visit">Hours</a><a href="#events">Events</a><a href="brewery.html">Brewery</a>
+      <a href="https://www.instagram.com/thehaulgp/">Instagram</a><a href="http://www.facebook.com/thehaulgp">Facebook</a>
+    </nav>
+    <span>© 2026 The Haul · 121 SW H Street, Grants Pass, Oregon</span>
+  </div>
+</footer>
+
+<script>
+{
+  // Set this to the Square online ordering link when it's ready; every "Order online" button uses it.
+  const ORDER_URL = 'https://cash.app/$thehaulor';
+
+  const MENU = [
+    {id:'pizza', name:'Pizza', img:['img/pizza-beer.jpg','Wood-fired pizza with a beer, stacked madrone behind','50% 60%'], note:'', intro:'Every pie bakes at around 750°F over madrone in our wood-fired oven from Naples. The dough is cold-fermented for flavor and made with local, GMO-free 00 flour. Ask for our house-made gluten-free crust, or vegan cheese on any veggie pie.', items:[
+      ['Margherita',17,'Tomato sauce, fresh mozzarella, basil, olive oil.'],
+      ['Cheese',17,'Tomato sauce, mozzarella, fresh shaved parm.'],
+      ['Pepperoni',18,'Tomato sauce, mozzarella, Ezzo cupping pepperoni.'],
+      ['Hot Pepp',19,'Tomato sauce, mozzarella, Ezzo cupping pepperoni, candied jalapeño, hot honey.'],
+      ['Italian Sausage',18,'Tomato sauce, mozzarella, house-made Italian sausage.'],
+      ['Combo',20,'Tomato sauce, mozzarella, house-made sausage, pepperoni, cremini mushrooms, olives.'],
+      ['Haul Hawaiian',19,'Tomato sauce, mozzarella, house-cured ham, pickled pineapple, fresh shaved parm.'],
+      ['BBQ Chicken',20,'Whiskey BBQ sauce, mozzarella, chicken, red onion, pepperoncini, parsley.'],
+      ['Garden Pesto',19,'Walnut-basil-arugula pesto, mozzarella, cherry tomatoes, roasted garlic, red onion.'],
+      ['Bacon Pesto',19,'Walnut-basil-arugula pesto, mozzarella, blanched potato, bacon jam, red onion.'],
+      ['Tasso Sweet Onion',18,'White sauce, mozzarella, caramelized onion, house-cured ham, parsley.'],
+      ['Al Funghi',18,'White sauce, mozzarella, roasted cremini mushrooms, arugula, garlic oil.'],
+      ['White Pie',18,'Garlic oil, mozzarella, ricotta-feta, caramelized onions, parsley, sesame seed crust.'],
+      ['Potato Rosemary',17,'Garlic oil, mozzarella, roasted garlic, blanched potato, rosemary.'],
+      ['Vegan',18,'Tomato sauce, cherry tomatoes, roasted garlic, caramelized onions, olives, arugula, garlic oil.','Vegan']]},
+    {id:'shares', name:'Shares', note:'', intro:'', items:[
+      ['Vegetarian Nachos',13,'Fresh-fried tortilla chips, black beans, cheese sauce, roja, pickled cabbage, Mexi-ranch, red onion, cilantro. Add shredded pork, gringo beef or chicken +$4.'],
+      ['Queso Fundido',10,'House cheese sauce, chorizo, pickled red onion, cilantro, with fresh-fried tortilla chips.'],
+      ['Pizza Pockets',9,'Wood-fired pizza rolls filled with mozzarella, topped with garlic oil and parmesan, served with marinara. Add pepperoni +$1.'],
+      ['Mac and Cheese',12,'Elbow mac, cream, cheddar, provolone, bread crumbs, parsley. Add bacon or shredded pork +$4.'],
+      ['Hand-Cut Fries',6,'Cut, blanched and fried in house every day.','Vegan'],
+      ['Rosemary Garlic Fries',7,'Our hand-cut fries with rosemary and garlic.','Vegan'],
+      ['Garlic Parsley Parm Fries',7,'Our hand-cut fries with garlic, parsley and parmesan.']]},
+    {id:'tacos', name:'Tacos', img:['img/taco-fish.jpg','Beer-battered fish taco with slaw and pickled red onion on a house corn tortilla','50% 55%'], note:'Priced each', intro:'We nixtamalize organic, GMO-free corn to make fresh masa tortillas in house. Taste the difference.', items:[
+      ['Pork Verde',6,'Shredded smoked pork, salsa verde, red onion, cilantro.','GF'],
+      ['Gringo',6,'Spiced ground beef, cheddar, shredded romaine, red onion, Mexi-ranch, cilantro.','GF'],
+      ['Chicken',6,'Chicken, red onion, Mexi-ranch, cilantro. Choose verde or roja.','GF'],
+      ['Baja Shrimp',6,'Beer-battered shrimp, slaw, pickled red onion, cilantro.'],
+      ['Cauliflower & Bean',6,'Spiced cauliflower, black beans, red onion, pickled red cabbage, roja, cilantro.','Vegan · GF'],
+      ['Haul Crunchwrap',13,'Flour tortilla, tostada, cheese, romaine, pickled red cabbage, Mexi-ranch, cilantro, with roja. Vegan (house veggie crumble, vegan cheese) or Gringo (spiced beef, cheddar).']]},
+    {id:'sandwiches', name:'Sandwiches & burgers', note:'Come with hand-cut fries', intro:'Swap fries for a side salad or soup +$2 · upgrade to garlic parm or rosemary garlic fries +$2 · gluten-free bun +$2.', items:[
+      ['Haul Burger',16,'Double smash patty, shredded romaine, caramelized onions, American cheese, house pickles, Haul sauce, on brioche.'],
+      ['Street Smash',15,'Double smash patty, red onion, American cheese, house pickles, mustard, ketchup, on a potato roll.'],
+      ['Reuben',18,'Madrone house-smoked pastrami, house kraut, Swiss, Haul sauce, on rye.'],
+      ['Cuban',15,'House-smoked tasso, pulled pork, house dill pickles, mustard, aioli, Swiss, on a roll.'],
+      ['BBQ Pork',15,'Madrone-smoked pork shoulder, whiskey BBQ sauce, coleslaw, on brioche.'],
+      ['Fried Chicken',16,'Fried buttermilk chicken, provolone, aioli, coleslaw, on brioche.'],
+      ['Hot Chicken',15,'Fried buttermilk chicken, Tennessee hot, aioli, pickles, on brioche. Add hot honey +$1.'],
+      ['Grilled Chicken',15,'Chicken breast, provolone, aioli, shredded romaine, arugula-basil-walnut pesto, red onion, on brioche. Add bacon +$3.'],
+      ['Chicken Shawarma',16,'Grilled chicken breast, mixed greens, carrot, red onion, pickled red cabbage, cucumber, parsley, dill-tahini, on house-made flatbread. Add feta +$1.'],
+      ['Falafel',15,'Three chickpea patties, mixed greens, carrot, red onion, pickled red cabbage, cucumber, parsley, dill-tahini, on house-made flatbread.','Vegan'],
+      ['Veggie Burger',15,'House-made millet, black bean and cashew patty with romaine, onion, vegan mayo, house dill pickles, on vegan brioche.','Vegan'],
+      ['Vegan Tempeh Reuben',16,'Marinated tempeh, house kraut, vegan cheese, vegan Haul sauce, on rye.','Vegan']]},
+    {id:'salads', name:'Salads & soup', note:'Add grilled chicken to any salad +$4', intro:'', items:[
+      ['Smoked Tomato Soup',6,'Smoked tomato rosemary soup with parmesan, parsley and crostini.'],
+      ['Mixed Green Salad',13,'Mixed greens, red onion, cucumber, toasted pumpkin seeds, shredded carrots, dried cranberries, citrus vinaigrette. Small $7.','Vegan · GF'],
+      ['Caesar Salad',13,'Shredded romaine, house Caesar, croutons, parmesan. Small $7.'],
+      ['Asian Salad',13,'Mixed greens, shredded carrots, pickled cabbage, scallions, fried wonton strips, sesame seeds, Chinese hot mustard soy dressing.','Vegan'],
+      ['Taco Salad',14,'Romaine, black beans, cheddar, pickled red cabbage, red onion, cilantro, roja, Mexi-ranch, fried flour tortilla strips. Add pork, gringo beef or chicken +$4. We can make it vegan.']]},
+    {id:'kids', name:'Kids', note:'', intro:'', items:[
+      ['Grilled Cheese',6,'Cheddar, provolone and American cheese on Texas toast.'],
+      ['Buttered Parm Noodles',6,'Elbow mac, butter, bread crumbs, parmesan.'],
+      ['Quesadilla',8,'Cheddar and provolone in a flour tortilla.']]},
+    {id:'dessert', name:'Dessert', note:'', intro:'', items:[
+      ['Cheesecake',8,'New York-style cheesecake with a nixtamal masa crumble.','GF'],
+      ['Root Beer Float',8,"Boylan's natural root beer and Umpqua vanilla ice cream.",'GF']]}
+  ];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  document.getElementById('menuNav').innerHTML = MENU.map(c => `<a href="#m-${c.id}">${esc(c.name)}</a>`).join('');
+  document.getElementById('menuBody').innerHTML = MENU.map(c => `
+    <section class="menu-cat" id="m-${c.id}" aria-label="${esc(c.name)}">
+      <div class="cat-head"><h3 class="d">${esc(c.name)}</h3>${c.note ? `<span>${esc(c.note)}</span>` : ''}</div>
+      ${c.intro ? `<p class="cat-intro">${esc(c.intro)}</p>` : ''}
+      ${c.img ? `<figure class="cat-fig"><img src="${esc(c.img[0])}" alt="${esc(c.img[1])}" loading="lazy" style="object-position:${c.img[2]||'50% 50%'}"></figure>` : ''}
+      <div class="items">${c.items.map(([n,p,d,t]) => `
+        <div class="item"><div class="top"><b>${esc(n)}${t ? ` <em class="tag">${esc(t)}</em>` : ''}</b><span class="price">$${p}</span></div>${d ? `<p>${esc(d)}</p>` : ''}</div>`).join('')}
+      </div>
+    </section>`).join('');
+
+  // Hours (closed Tuesdays)
+  const HOURS = [['Sunday','11 am – 8 pm',11,20],['Monday','11 am – 8 pm',11,20],['Tuesday','Closed',null,null],['Wednesday','11 am – 8 pm',11,20],['Thursday','11 am – 8 pm',11,20],['Friday','11 am – 9 pm',11,21],['Saturday','11 am – 9 pm',11,21]];
+  let now;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/Los_Angeles',weekday:'long',hour:'numeric',hour12:false}).formatToParts(new Date());
+    now = {day: parts.find(p => p.type==='weekday').value, hour: +parts.find(p => p.type==='hour').value % 24};
+  } catch (e) { const d = new Date(); now = {day: HOURS[d.getDay()][0], hour: d.getHours()}; }
+  const order = [1,2,3,4,5,6,0];
+  document.querySelector('#hoursTable tbody').innerHTML = order.map(i => {
+    const [d,t] = HOURS[i];
+    return `<tr class="${d===now.day?'now':''}"><td>${d}</td><td>${t}</td></tr>`;
+  }).join('');
+  const today = HOURS.find(h => h[0]===now.day);
+  const pill = document.getElementById('todayPill');
+  if (!today || today[2] === null) { pill.textContent = 'Closed today · open tomorrow at 11 am'; pill.classList.add('closed'); }
+  else if (now.hour < today[2]) pill.textContent = `Opens today at 11 am · until ${today[1].split('– ')[1]}`;
+  else if (now.hour >= today[3]) { pill.textContent = 'Closed for the night'; pill.classList.add('closed'); }
+  else pill.textContent = `Open now · until ${today[1].split('– ')[1]}`;
+
+  if (ORDER_URL) for (const a of document.querySelectorAll('.order-link')) { a.href = ORDER_URL; a.textContent = 'Order online'; } if (ORDER_URL) for (const e of document.querySelectorAll('.order-sub')) e.textContent = 'Pickup at 121 SW H Street, paid through Square';
+}
+</script>
+</body>
+</html>
